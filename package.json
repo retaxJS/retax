@@ -1,0 +1,79 @@
+{
+  "name": "retax",
+  "version": "0.0.0",
+  "description": "Universal React Redux Framework",
+  "main": "lib/index.js",
+  "jsnext:main": "es/index.js",
+  "typings": "libTs/index.d.ts",
+  "scripts": {
+    "build": "builder run build",
+    "build:examples": "BABEL_ENV=commonjs babel-node examples/buildAll.js",
+    "lint": "builder run lint",
+    "prepublish": "npm test && builder run build",
+    "pretest": "npm run typings && builder run lint",
+    "preversion": "npm test && builder run build",
+    "start": "builder run build:commonjs:watch",
+    "tdd": "builder run test:all:watch",
+    "test:once": "builder run test:all",
+    "test": "builder run test:all:coverage",
+    "typings": "builder run typings:install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/retaxJS/retax"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "framework",
+    "universal",
+    "retax"
+  ],
+  "author": "Thomas Hourlier <thomas.hourlier@cnode.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/retaxJS/retax/issues"
+  },
+  "homepage": "https://github.com/retaxJS/retax",
+  "dependencies": {
+    "builder-ts-library": "~0.0.6",
+    "inversify": "^2.0.0-beta.1",
+    "retax-client": "^1.0.0-alpha.1",
+    "retax-core": "^1.0.0-alpha.1",
+    "retax-di": "^1.0.0-alpha.0",
+    "retax-server": "^1.0.0-alpha.1",
+    "retax-utils": "^1.0.0-alpha.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.7.7",
+    "builder": "^2.9.1",
+    "builder-ts-library-dev": "~0.0.6",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "immutable": "^3.8.0",
+    "react": "^0.14.0 || ^15.0.0-0",
+    "react-dom": "^0.14.0 || ^15.0.0-0",
+    "react-helmet": "^3.0.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.2.4",
+    "react-router-redux": "^4.0.2",
+    "redux": "^3.4.0",
+    "redux-mock-store": "^1.0.2",
+    "reflect-metadata": "^0.1.3",
+    "webpack-isomorphic-tools": "^2.2.26"
+  },
+  "peerDependencies": {
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "immutable": "^3.8.0",
+    "react-dom": "^0.14.0 || ^15.0.0-0",
+    "react-helmet": "^3.0.1",
+    "react-redux": "^4.4.5",
+    "react-router-redux": "^4.0.2",
+    "react-router": "^2.2.4",
+    "react": "^0.14.0 || ^15.0.0-0",
+    "redux": "^3.4.0",
+    "reflect-metadata": "^0.1.3",
+    "webpack-isomorphic-tools": "^2.2.26"
+  }
+}

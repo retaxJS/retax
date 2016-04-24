@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+node_modules
+ncp-debug.log
+npm-debug.log
+coverage
+es
+lib
+libts
+.awcache
+typings
+dist

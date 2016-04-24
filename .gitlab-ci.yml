@@ -1,0 +1,32 @@
+image: node:5.8
+
+stages:
+  - test
+  - build
+  - deploy
+
+# Wait for gitlab-ci-runner 0.9 to have global cache.
+cache:
+  untracked: true
+  paths:
+    - node_modules/
+
+before_script:
+  - node --version
+  - npm --version
+
+test:
+  stage: test
+  script:
+    - npm install --loglevel http
+    - npm test
+  tags:
+    - node
+
+bundle:
+  stage: test
+  script:
+    - npm install --loglevel http
+    - npm run build
+  tags:
+    - node

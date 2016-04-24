@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es2015",
+    "noImplicitAny": false,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "outDir": "libTs",
+    "declaration": true,
+    "moduleResolution": "node",
+    "pretty": true,
+    "stripInternal": true
+  },
+  "exclude": [
+    "node_modules",
+    "examples",
+    "es",
+    "lib",
+    "libTs",
+    "coverage",
+    "typings/browser",
+    "typings/browser.d.ts"
+  ]
+}
