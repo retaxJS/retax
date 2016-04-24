@@ -7,13 +7,13 @@
 
 
 Retax helps you to bootstrap your **universal react / redux** application.
-It also comes with a set of **optionnal** opinionated helpers to structure and reduce your application code.
+It also comes with a set of **optional** opinionated helpers to structure and reduce your application code.
 
 You could look at the [examples](https://github.com/retaxJS/retax/tree/master/examples) folder to see how to use **retax** or look at a *HUGE* app running with retax [here][seed] (work in progress).
 
 **WARNING**:
 * The core of retax is stable and tested. :thumbsup:
-* Optionnal modules (*ActionsCreator*, *Api* and *RetaxComponent*) are unstable and may change in a near future
+* Optional modules (*ActionsCreator*, *Api* and *RetaxComponent*) are unstable and may change in a near future
 
 ## Getting started
 
@@ -162,7 +162,7 @@ After the bootstrapping, you could still use all modules exposed by **react**, *
 (Eg. `<Link />` from **react-router**, `bindActionCreators` from **redux**)
 
 
-### **OPTIONNAL** It helps you structure your app and reduces your boilerplate code
+### **OPTIONAL** It helps you structure your app and reduces your boilerplate code
 As explained [here](https://github.com/retaxJS/retax-core#provide-a-inversion-of-control-container-to-retax-modules), **retax** wraps your app
 with a component that has access to an IoC container. This allows you to register into it services and inject them later into other components.
 
