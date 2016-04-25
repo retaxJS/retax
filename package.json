@@ -40,7 +40,7 @@
     "inversify": "^2.0.0-beta.1",
     "retax-client": "^1.0.0-alpha.1",
     "retax-core": "^1.0.0-alpha.1",
-    "retax-di": "^1.0.0-alpha.0",
+    "retax-di": "^1.0.0-alpha.1",
     "retax-server": "^1.0.0-alpha.1",
     "retax-utils": "^1.0.0-alpha.1"
   },
