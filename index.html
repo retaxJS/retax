@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Retax by retaxJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Retax</h1>
+      <h2 class="project-tagline">Universal React Redux Framework</h2>
+      <a href="https://github.com/retaxJS/retax" class="btn">View on GitHub</a>
+      <a href="https://github.com/retaxJS/retax/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/retaxJS/retax/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="retax" class="anchor" href="#retax" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retax</h1>
+
+<p><a href="https://gitter.im/hourliert/retax?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/hourliert/retax.svg" alt="Join the chat at https://gitter.im/hourliert/retax"></a>
+<a href="https://travis-ci.org/retaxJS/retax"><img src="https://travis-ci.org/retaxJS/retax.svg?branch=master" alt="Build Status"></a>
+<a href="https://badge.fury.io/js/retax"><img src="https://badge.fury.io/js/retax.svg" alt="Version"></a>
+<a href="https://codecov.io/github/retaxJS/retax?branch=master"><img src="https://codecov.io/github/retaxJS/retax/coverage.svg?branch=master" alt="codecov.io"></a></p>
+
+<p>Retax helps you to bootstrap your <strong>universal react / redux</strong> application.
+It also comes with a set of <strong>optional</strong> opinionated helpers to structure and reduce your application code.</p>
+
+<p>You could look at the <a href="https://github.com/retaxJS/retax/tree/master/examples">examples</a> folder to see how to use <strong>retax</strong> or look at a <em>HUGE</em> app running with retax <a href="https://github.com/hourliert/react-seed">here</a> (work in progress).</p>
+
+<p><strong>WARNING</strong>:</p>
+
+<ul>
+<li>The core of retax is stable and tested. <img class="emoji" title=":thumbsup:" alt=":thumbsup:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" height="20" width="20" align="absmiddle">
+</li>
+<li>Optional modules (<em>ActionsCreator</em>, <em>Api</em> and <em>RetaxComponent</em>) are unstable and may change in a near future</li>
+</ul>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started</h2>
+
+<p>Install retax:</p>
+
+<pre><code>npm install --save retax
+</code></pre>
+
+<p>And satisfy peer dependencies (yay, there are many...):</p>
+
+<pre><code>"peerDependencies": {
+  "cookie-parser": "^1.4.1",
+  "express": "^4.13.4",
+  "immutable": "^3.8.0",
+  "react-dom": "^0.14.0 || ^15.0.0-0",
+  "react-helmet": "^3.0.1",
+  "react-redux": "^4.4.5",
+  "react-router-redux": "^4.0.2",
+  "react-router": "^2.2.4",
+  "react": "^0.14.0 || ^15.0.0-0",
+  "redux": "^3.4.0",
+  "reflect-metadata": "^0.1.3",
+  "webpack-isomorphic-tools": "^2.2.26"
+}
+</code></pre>
+
+<p>Retax also use <strong>es6-generators</strong>, be sure to have a polyfill for that. <a href="https://babeljs.io/docs/usage/polyfill/">babel-polyfill</a> do the trick!</p>
+
+<p>We want to render this simple <strong>react/redux</strong> app:</p>
+
+<div class="highlight highlight-source-ts"><pre><span class="pl-c">// app.js</span>
+
+<span class="pl-k">import</span> { bindActionCreators } <span class="pl-k">from</span> <span class="pl-s">'redux'</span>;
+<span class="pl-k">import</span> { connect } <span class="pl-k">from</span> <span class="pl-s">'react-redux'</span>;
+<span class="pl-k">import</span> { Route } <span class="pl-k">from</span> <span class="pl-s">'react-router'</span>;
+
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">counterReducer</span>(<span class="pl-v">state</span>: <span class="pl-k">number</span> <span class="pl-k">=</span> <span class="pl-c1">0</span>, <span class="pl-v">action</span>: <span class="pl-k">any</span>): <span class="pl-k">number</span> {
+  <span class="pl-k">switch</span> (action.type) {
+    <span class="pl-k">case</span> <span class="pl-s">'INC'</span>:
+      <span class="pl-k">return</span> state <span class="pl-k">+</span> <span class="pl-c1">1</span>;
+    <span class="pl-k">default</span>:
+      <span class="pl-k">return</span> state;
+  }
+}
+
+<span class="pl-k">function</span> <span class="pl-en">incrementActionCreator</span>() {
+  <span class="pl-k">return</span> { type: <span class="pl-s">'INC'</span> };
+}
+
+<span class="pl-k">const</span> <span class="pl-v">About</span> = connect(
+  ({ counter }) <span class="pl-k">=&gt;</span> ({ counter }),
+  dispatch <span class="pl-k">=&gt;</span> bindActionCreators({ incrementActionCreator }, dispatch)
+)(
+  ({ counter, incrementActionCreator }) <span class="pl-k">=&gt;</span> (
+    <span class="pl-k">&lt;</span>div onClick<span class="pl-k">=</span>{incrementActionCreator}<span class="pl-k">&gt;</span>
+      Hello About<span class="pl-k">!</span> Here is the counter value: {counter}
+    <span class="pl-k">&lt;</span><span class="pl-k">/</span>div<span class="pl-k">&gt;</span>
+  )
+);
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> (
+  <span class="pl-k">&lt;</span>Route path<span class="pl-k">=</span><span class="pl-s">"/"</span><span class="pl-k">&gt;</span>
+    <span class="pl-k">&lt;</span>Route path<span class="pl-k">=</span><span class="pl-s">"about"</span> component<span class="pl-k">=</span>{About}<span class="pl-k">/</span><span class="pl-k">&gt;</span>
+  <span class="pl-k">&lt;</span><span class="pl-k">/</span>Route<span class="pl-k">&gt;</span>
+);
+</pre></div>
+
+<p>Let's do that with <strong>retax</strong>!</p>
+
+<p>First, define a retax configuration file.</p>
+
+<div class="highlight highlight-source-ts"><pre><span class="pl-c">// retax.config.js</span>
+<span class="pl-k">import</span> rootRoute, { counterReducer } <span class="pl-k">from</span> <span class="pl-s">'./app'</span>;
+
+<span class="pl-c">// retax configuration file support many more options, like redux-middleware, redux-store-enhancer, dynamic rootRoute evaluation, etc...</span>
+<span class="pl-c">// the complete doc is comming very soon</span>
+<span class="pl-k">export</span> <span class="pl-k">default</span> {
+  router: {
+    static: rootRoute,
+  },
+  store: {
+    reducers: {
+      counter: counterReducer,
+    },
+  },
+};
+</pre></div>
+
+<p>Finally, bootstrap the app.</p>
+
+<div class="highlight highlight-source-ts"><pre><span class="pl-c">// clientEntry.js</span>
+
+<span class="pl-k">import</span> { retax } <span class="pl-k">from</span> <span class="pl-s">'retax'</span>;
+<span class="pl-k">import</span> retaxConfig <span class="pl-k">from</span> <span class="pl-s">'./retax.config'</span>;
+
+retax.config(retaxConfig);
+
+<span class="pl-k">const</span> <span class="pl-v">rootElement</span> = document.getElementById(<span class="pl-s">'root'</span>);
+
+retax.bootstrap(rootElement);
+</pre></div>
+
+<p>That's all!</p>
+
+<h2>
+<a id="what-retax-realy-does" class="anchor" href="#what-retax-realy-does" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What retax realy does?</h2>
+
+<h3>
+<a id="it-centralizes-all-the-stuff-that-is-not-needed-by-the-developper" class="anchor" href="#it-centralizes-all-the-stuff-that-is-not-needed-by-the-developper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>It centralizes all the stuff that is not needed by the developper</h3>
+
+<p>How many times react / redux developpers should edit the app configuration files (like <code>createReduxStore.js</code>, <code>clientEntry.js</code>, <code>serverRenderingMiddleware.js</code>, etc...)?
+Only once. But in practice. this is not really like that...</p>
+
+<ul>
+<li>If <code>react-router</code> has an new update with a change in its API, you will have to edit the <code>clientEntry.js</code>, maybe the <code>serverRenderingMiddleware.js</code>, and others...</li>
+<li>If <code>redux</code> has a new update and expose a new function that does something more efficiently, you surely want to have this.</li>
+<li>If <code>react</code> has a new... etc...</li>
+</ul>
+
+<p>You got it? It could be a serious pain to update the structure of the app. (the more you have external dependencies, the harder it is!)
+And we have not talking about creating the <strong>real</strong> app yet...</p>
+
+<p>Retax helps you with this. You have just to give it a configuration file and it will take care of everything.
+All its bootstrapping process is highly customizable if you need it.
+You can found <a href="https://github.com/retaxJS/retax-core#bootstrapping">here</a> some details about it.</p>
+
+<p>Here is a non exhaustive list of retax features:</p>
+
+<ul>
+<li>Support <strong>universal</strong> javascript</li>
+<li>Initialize your <strong>redux</strong> store
+
+<ul>
+<li>You could provide your redux middlewares</li>
+<li>You also could provide your store enhancers</li>
+<li>And obviously, your reducers!</li>
+</ul>
+</li>
+<li>Initialize <strong>react-router</strong>
+
+<ul>
+<li>Just give retax a root route object (JSX or plain object)</li>
+</ul>
+</li>
+<li>Support out-of-the-box code splitting (useful if you are using <code>require.ensure</code> into your <strong>react-router</strong> routes)</li>
+<li>Initialize <strong>react-router-redux</strong>
+</li>
+<li>Render the <strong>react</strong> app
+
+<ul>
+<li>you could append JSX elements in the render loop, useful if your want to include redux <code>&lt;DevTools /&gt;</code>
+</li>
+</ul>
+</li>
+<li>Support lifecycle hooks to customize and inject data during the bootstrapping process. For instance you could:
+
+<ul>
+<li>Prefetch initial state before doing the route matching</li>
+<li>Prefetch components data once the route matching is done.</li>
+</ul>
+</li>
+</ul>
+
+<p>After the bootstrapping, you could still use all modules exposed by <strong>react</strong>, <strong>react-router</strong>, <strong>redux</strong>, <strong>react-router-redux</strong>, ...
+(Eg. <code>&lt;Link /&gt;</code> from <strong>react-router</strong>, <code>bindActionCreators</code> from <strong>redux</strong>)</p>
+
+<h3>
+<a id="optional-it-helps-you-structure-your-app-and-reduces-your-boilerplate-code" class="anchor" href="#optional-it-helps-you-structure-your-app-and-reduces-your-boilerplate-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>OPTIONAL</strong> It helps you structure your app and reduces your boilerplate code</h3>
+
+<p>As explained <a href="https://github.com/retaxJS/retax-core#provide-a-inversion-of-control-container-to-retax-modules">here</a>, <strong>retax</strong> wraps your app
+with a component that has access to an IoC container. This allows you to register into it services and inject them later into other components.</p>
+
+<p>All the following items are considered as <strong>retax modules</strong>.</p>
+
+<h4>
+<a id="api-module" class="anchor" href="#api-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Module</h4>
+
+<h5>
+<a id="initial-problem" class="anchor" href="#initial-problem" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initial Problem</h5>
+
+<p>Let's say uou want to do an ajax call to an API but you have to be authentified. Your auth token is in your <code>session</code> reducer.
+Each time you call your <code>doAjaxCall</code> actions creator, your have to:</p>
+
+<ul>
+<li>read the store state</li>
+<li>retrieve the auth token</li>
+<li>pass it to your API Connector class</li>
+</ul>
+
+<p>So much boilerplate code especially if you have to manage several API endpoints.</p>
+
+<h5>
+<a id="retax-solution" class="anchor" href="#retax-solution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retax Solution</h5>
+
+<p>Retax API module helps you create an API class (with base methods, GET, POST, DELETE, PUT (can be extended)) and will inject into it the current auth token.
+This API class can later be injected into an Actions Creator.</p>
+
+<h4>
+<a id="actions-creator-module" class="anchor" href="#actions-creator-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Actions Creator Module</h4>
+
+<p>Create an Actions Creator class with the possibility to inject into it other Actions Creator and APIs.</p>
+
+<h4>
+<a id="retax-component-module" class="anchor" href="#retax-component-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retax Component Module</h4>
+
+<p>Create a React component with the possibility to inject into it Actions Creators.</p>
+
+<h2>
+<a id="faq" class="anchor" href="#faq" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FAQ</h2>
+
+<h3>
+<a id="i-dont-understand-how-this-library-is-built" class="anchor" href="#i-dont-understand-how-this-library-is-built" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I don't understand how this library is built</h3>
+
+<p>Check <a href="http://builder.formidable.com/">builder</a> and <a href="https://github.com/hourliert/builder-ts-library">builder-ts-library</a></p>
+
+<h2>
+<a id="typescript-support" class="anchor" href="#typescript-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Typescript support</h2>
+
+<p>This project is shipped with typescript typings.
+If you are using typescript@^1.6, you don't have to do anything, it will detect the definition types automatically.</p>
+
+<h2>
+<a id="thanks" class="anchor" href="#thanks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Thanks</strong>
+</h2>
+
+<p>Thanks to <a href="https://github.com/remojansen">remojansen</a> for the project <a href="https://github.com/inversify/InversifyJS/">inversify</a>.
+This project is intensively used by <strong>retax</strong>.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT License (MIT)</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/retaxJS/retax">Retax</a> is maintained by <a href="https://github.com/retaxJS">retaxJS</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
