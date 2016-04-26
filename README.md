@@ -40,7 +40,7 @@ And satisfy peer dependencies (yay, there are many...):
 }
 ```
 
-Retax also use **es6-generators**, be sure to have a polyfill for that. [babel-polyfill](https://babeljs.io/docs/usage/polyfill/) do the trick!
+Retax also uses **es6-generators**, be sure to have a polyfill for that. [babel-polyfill](https://babeljs.io/docs/usage/polyfill/) does the trick!
 
 
 We want to render this simple **react/redux** app:
@@ -206,8 +206,8 @@ This project is intensively used by **retax**.
 MIT License (MIT)
 
 
-[gitter-badge]: https://badges.gitter.im/hourliert/retax.svg
-[gitter-link]: https://gitter.im/hourliert/retax?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+[gitter-badge]: https://badges.gitter.im/retaxJS/retax.svg
+[gitter-link]: https://gitter.im/retaxJS/retax?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 [travis-badge]: https://travis-ci.org/retaxJS/retax.svg?branch=master
 [travis-link]: https://travis-ci.org/retaxJS/retax
 [version-badge]: https://badge.fury.io/js/retax.svg
