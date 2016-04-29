@@ -198,6 +198,9 @@ Check [builder][builder-link] and [builder-ts-library][builder-ts-library-link]
 This project is shipped with typescript typings.
 If you are using typescript@^1.6, you don't have to do anything, it will detect the definition types automatically.
 
+## Roadmap
+You can check the roadmap [here](https://github.com/retaxJS/retax/wiki/Roadmap).
+
 ## **Thanks**
 Thanks to [remojansen](https://github.com/remojansen) for the project [inversify](https://github.com/inversify/InversifyJS/).
 This project is intensively used by **retax**.
