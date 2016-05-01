@@ -1,6 +1,6 @@
 {
   "name": "retax",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Universal React Redux Framework",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
