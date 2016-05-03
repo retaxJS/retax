@@ -1,4 +1,4 @@
-import { retax } from 'retax';
+import { retax } from '../../lib/index';
 
 import retaxConfig from './retax.config';
 

@@ -1,6 +1,8 @@
 (jest as any).disableAutomock();
 
-import middleware from '../server';
+import 'reflect-metadata';
+
+import { retaxMiddleware } from '../index';
 
 describe('retax server', () => {
   const serverConfig = {
@@ -8,7 +10,7 @@ describe('retax server', () => {
   };
 
   it('exposes the middleware', () => {
-    expect(middleware instanceof Function).toBeTruthy();
-    expect(middleware(serverConfig) instanceof Function);
+    expect(retaxMiddleware instanceof Function).toBeTruthy();
+    expect(retaxMiddleware(serverConfig) instanceof Function);
   });
 });

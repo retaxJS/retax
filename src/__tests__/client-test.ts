@@ -1,11 +1,12 @@
 (jest as any).disableAutomock();
 
-import { ClientBootstrapper } from 'retax-client';
+import 'reflect-metadata';
 
-import bootstrapper from '../client';
+import { ClientBootstrapper } from '../client';
+import { retax } from '../index';
 
 describe('retax client', () => {
   it('exposes the client bootstrapper', () => {
-    expect(bootstrapper instanceof ClientBootstrapper).toBeTruthy();
+    expect(retax instanceof ClientBootstrapper).toBeTruthy();
   });
 });

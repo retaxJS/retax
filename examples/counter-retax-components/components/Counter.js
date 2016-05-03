@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import { annotator } from 'retax-components';
+import { annotator } from '../../../lib/index';
 
 import CounterActionsCreator from '../actionsCreators/counter';
 

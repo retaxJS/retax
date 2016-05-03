@@ -2,19 +2,21 @@
   "name": "seed-component",
   "version": false,
   "ambientDependencies": {
+    "enzyme": "registry:dt/enzyme#1.2.0+20160324040416",
     "express": "registry:dt/express#4.0.0+20160317120654",
     "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160322035842",
     "isomorphic-fetch": "registry:dt/isomorphic-fetch#0.0.0+20160316155526",
-    "jest": "registry:dt/jest#0.9.0+20160319033628",
+    "jest": "registry:dt/jest#0.9.0+20160425141105",
     "js-cookie": "registry:dt/js-cookie#2.0.0+20160317120654",
+    "lodash": "registry:dt/lodash#3.10.0+20160330154726",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
-    "node": "registry:dt/node#4.0.0+20160412142033",
-    "react": "registry:dt/react#0.14.0+20160412154040",
+    "node": "registry:dt/node#4.0.0+20160501135006",
+    "react": "registry:dt/react#0.14.0+20160423065914",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
-    "react-helmet": "registry:dt/react-helmet#0.0.0+20160318140247",
-    "react-router": "registry:dt/react-router#2.0.0+20160330124659",
+    "react-helmet": "registry:dt/react-helmet#0.0.0+20160423063849",
+    "react-router": "registry:dt/react-router#2.0.0+20160501155536",
     "react-router/history": "registry:dt/react-router/history#2.0.0+20160316155526",
-    "serve-static": "registry:dt/serve-static#0.0.0+20160317120654"
+    "serve-static": "registry:dt/serve-static#0.0.0+20160501131543"
   },
   "ambientDevDependencies": {}
 }

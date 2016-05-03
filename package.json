@@ -37,21 +37,23 @@
   "homepage": "https://github.com/retaxJS/retax",
   "dependencies": {
     "builder-ts-library": "~0.0.6",
+    "hoist-non-react-statics": "^1.0.5",
+    "immutable": "^3.8.0",
     "inversify": "^2.0.0-beta.2",
-    "retax-client": "^1.0.0-alpha.2",
-    "retax-core": "^1.0.0-alpha.2",
-    "retax-di": "^1.0.0-alpha.2",
-    "retax-server": "^1.0.0-alpha.2",
-    "retax-utils": "^1.0.0-alpha.1"
+    "isomorphic-fetch": "^2.2.1",
+    "js-cookie": "^2.1.0",
+    "lodash": "^4.6.1"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
     "builder": "^2.9.1",
     "builder-ts-library-dev": "~0.0.6",
     "cookie-parser": "^1.4.1",
+    "enzyme": "^2.2.0",
     "express": "^4.13.4",
     "immutable": "^3.8.0",
     "react": "^0.14.0 || ^15.0.0-0",
+    "react-addons-test-utils": "^15.0.0",
     "react-dom": "^0.14.0 || ^15.0.0-0",
     "react-helmet": "^3.0.1",
     "react-redux": "^4.4.5",

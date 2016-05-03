@@ -1,5 +1,4 @@
-import { actionsCreatorFactory } from 'retax';
-import { AbstractActionsCreator, annotator } from 'retax-components';
+import { actionsCreatorFactory, AbstractActionsCreator, annotator } from '../../../lib/index';
 
 @annotator.ActionsCreator()
 export default class CounterActionsCreator extends AbstractActionsCreator {
