@@ -4,7 +4,8 @@ import middleware from '../server';
 
 describe('retax server', () => {
   const serverConfig = {
-    serverRendering: true,
+    serverRendering: false,
+    staticIndex: (): string => 'Hey',
   };
 
   it('exposes the middleware', () => {

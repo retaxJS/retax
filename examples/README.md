@@ -21,6 +21,13 @@ A simple counter very similar to the redux counter example.
 
 Be sure to check `./counter/index.js` and `./counter/retax.config.js` to see the power of **retax**!
 
+## counter-static
+Same counter than the previous example.
+
+The only difference is that we are using the static rendering middleware from **retax-server**.
+
+Be sure to check `./counter-static/server/server.js`.
+
 ## universal
 A simple counter very similar to the redux counter example but with server rendering.
 The code in the folder `./universal/common` is exactly the code of the **counter** example.
