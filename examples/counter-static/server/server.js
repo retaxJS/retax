@@ -33,8 +33,8 @@ isomorphicTools.development(true);
 
 isomorphicTools.server('.').then(() => {
   app.use(retaxMiddleware({
-    serverRendering: true,
-    dynamicIndex: genHtmlIndex(isomorphicTools.assets()),
+    serverRendering: false,
+    staticIndex: genHtmlIndex(isomorphicTools.assets()),
     retaxConfig: getRetaxConfig(true), // we retrieve the server config
   }));
 

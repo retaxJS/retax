@@ -38,10 +38,10 @@
   "dependencies": {
     "builder-ts-library": "~0.0.6",
     "inversify": "^2.0.0-beta.2",
-    "retax-client": "^1.0.0-alpha.2",
-    "retax-core": "^1.0.0-alpha.2",
-    "retax-di": "^1.0.0-alpha.2",
-    "retax-server": "^1.0.0-alpha.2",
+    "retax-client": "^1.1.0-alpha.0",
+    "retax-core": "^1.1.0-alpha.0",
+    "retax-di": "^1.1.0-alpha.0",
+    "retax-server": "^1.1.0-alpha.0",
     "retax-utils": "^1.0.0-alpha.1"
   },
   "devDependencies": {
