@@ -9,7 +9,7 @@
 Retax helps you to bootstrap your **universal react / redux** application.
 It also comes with a set of **optional** opinionated helpers to structure and reduce your application code.
 
-You could look at the [examples](https://github.com/retaxJS/retax/tree/master/examples) folder to see how to use **retax** or look at a *HUGE* app running with retax [here][seed] (work in progress).
+You could look at the [examples](https://github.com/retaxJS/retax/tree/master/examples) folder to see how to use **retax** or look at a *complete* retax seed [here][seed] (work in progress).
 
 **WARNING**:
 * The core of retax is stable and tested. :thumbsup:
@@ -217,6 +217,6 @@ MIT License (MIT)
 [version-link]: https://badge.fury.io/js/retax
 [codecov-badge]: https://codecov.io/github/retaxJS/retax/coverage.svg?branch=master
 [codecov-link]: https://codecov.io/github/retaxJS/retax?branch=master
-[seed]: https://github.com/hourliert/react-seed
+[seed]: https://github.com/retaxJS/retax-seed
 [builder-link]: http://builder.formidable.com/
 [builder-ts-library-link]: https://github.com/hourliert/builder-ts-library
