@@ -1,9 +1,17 @@
 language: node_js
 node_js:
-  - v5
+- v5
 before_install: npm install -g codecov
 script:
-  - npm test
-  - npm run build:examples
+- npm test
+- npm run build:examples
 after_success:
-  - codecov -e TRAVIS_NODE_VERSION
+- codecov -e TRAVIS_NODE_VERSION
+deploy:
+  provider: npm
+  email: hourliert@gmail.com
+  api_key:
+    secure: GTfoOLPfrufFTO4psKBjur/VcDFjDhM6DFs5rSKdz6ojTiuqb8vBssPk+BeKKV1NHShWczJxV/yYfY6GPHU+zksqn5cvTIM7EXvNssdivF8ETutbPdUlom5MJmKQGKpiw7QdlOn30058BD3w9afYqk5uoNADwrO+hnkybQm5UU4yrMJb6n+OUn2bR2WHhWYHAM7xhDVE/VAzAmUHyUTxgiI5HVhzUNtAUpLhbO/b/8l1pICecaAKQkxLpQGOTvXpROn8vY7l4b/M9uvcXCPMgN27oecffcNgedarBR7mh0hXhRXbKvb5OQQzy3JU3sUBTH/5sUfc59J2MVD+fawRNUNKAJSZlMSGS89d2E1fl83H+2h3OJv87kcgzqpP2m0B1agGH8xMqnbYEjIuNSZeE6FQo1ZzT2l69ldxKCXkxVzXA66BZSWw1Tvrlgm54n7s4ePnXJp3vovhhVZHMkEvkgXp+UbcsJbx+mBWhcjA/yGoLaVT1iRdbf56iqQWTGRNov/mflGepIjZCoBw73ecNlVzHdtbOmKOJcr0oYggVOC8fAyKT/WFDw9Ebe74LrimSqgaECpblOIP1336Nyh+Yz8ptKrhqzWUQwQ6ANakdPxmXTpBjICK+T4nYJSUDnNhSRKnLQJwilC4LwZdRheh8uE04V8oL9lA/jLizAifmn0=
+  on:
+    tags: true
+    repo: retaxJS/retax

@@ -1,3 +1,7 @@
+#1.1.0
+Update **retax-*** dependencies to follow semver.
+
+
 #1.1.0-alpha
 * **retax-core** no longer depend on **webpack-isomorphic-tools**
 * You can now use your own template when using **retax-server**
