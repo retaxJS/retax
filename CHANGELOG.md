@@ -1,3 +1,6 @@
+#1.1.1
+Update the way retax export its constants.
+
 #1.1.0
 Update **retax-*** dependencies to follow semver.
 

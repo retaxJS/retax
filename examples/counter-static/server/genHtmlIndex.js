@@ -1,4 +1,4 @@
-import { INITIAL_STATE_KEY } from 'retax';
+import { INITIAL_STATE_KEY } from '../../../lib/index';
 
 export default function genStaticIndex(assets) {
   return () => (`

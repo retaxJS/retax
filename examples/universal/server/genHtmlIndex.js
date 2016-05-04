@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { renderToString } from 'react-dom/server';
-import { INITIAL_STATE_KEY } from 'retax';
+import { INITIAL_STATE_KEY } from '../../../lib/index';
 
 export default function genDynamicIndex(assets) {
   return (app, store) => {

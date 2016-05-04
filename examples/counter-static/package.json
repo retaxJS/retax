@@ -1,5 +1,5 @@
 {
-  "name": "redux-universal-example",
+  "name": "counter-static-example",
   "version": "0.0.0",
   "description": "An example of a universally-rendered Redux application",
   "scripts": {
