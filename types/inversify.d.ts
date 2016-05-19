@@ -1,1 +1,1 @@
-/// <reference path="../node_modules/inversify/type_definitions/inversify/inversify.d.ts" />
+/// <reference path="../node_modules/inversify-dts/inversify/inversify.d.ts" />
