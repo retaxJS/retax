@@ -38,7 +38,7 @@
   "dependencies": {
     "builder-ts-library": "~0.0.6",
     "inversify": "2.0.0-beta.8",
-    "inversify-dts": "1.0.3",
+    "inversify-dts": "1.0.6",
     "retax-client": "^1.1.0",
     "retax-core": "^1.1.1",
     "retax-di": "^1.1.0",
