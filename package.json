@@ -37,13 +37,13 @@
   "homepage": "https://github.com/retaxJS/retax",
   "dependencies": {
     "builder-ts-library": "~0.0.6",
-    "inversify": "2.0.0-beta.8",
-    "inversify-dts": "1.0.3",
-    "retax-client": "^1.1.0",
-    "retax-core": "^1.1.1",
-    "retax-di": "^1.1.0",
-    "retax-server": "^1.1.0",
-    "retax-utils": "^1.0.1"
+    "inversify": "2.0.0-beta.10",
+    "inversify-dts": "1.0.8",
+    "retax-client": "^1.1.3",
+    "retax-core": "^1.2.1",
+    "retax-di": "^1.1.2",
+    "retax-server": "^1.1.3",
+    "retax-utils": "^1.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
