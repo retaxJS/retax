@@ -43,7 +43,7 @@
     "retax-core": "^1.1.1",
     "retax-di": "^1.1.0",
     "retax-server": "^1.1.0",
-    "retax-utils": "^1.0.1"
+    "retax-utils": "^1.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
