@@ -27,8 +27,8 @@
     "react-router-redux": "^4.0.2",
     "redux": "^3.4.0",
     "reflect-metadata": "^0.1.3",
-    "retax": "^1.1.0",
-    "retax-components": "^0.0.0",
+    "retax": "^1.1.4",
+    "retax-components": "^0.1.3",
     "webpack-isomorphic-tools": "^2.2.26"
   },
   "devDependencies": {
