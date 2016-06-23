@@ -41,7 +41,7 @@
     "inversify-dts": "1.0.3",
     "retax-client": "^1.1.0",
     "retax-core": "^1.1.1",
-    "retax-di": "^1.1.0",
+    "retax-di": "^1.1.2",
     "retax-server": "^1.1.0",
     "retax-utils": "^1.0.1"
   },
