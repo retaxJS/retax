@@ -39,7 +39,7 @@
     "builder-ts-library": "~0.0.6",
     "inversify": "2.0.0-beta.8",
     "inversify-dts": "1.0.3",
-    "retax-client": "^1.1.0",
+    "retax-client": "^1.1.3",
     "retax-core": "^1.1.1",
     "retax-di": "^1.1.0",
     "retax-server": "^1.1.0",
