@@ -125,7 +125,7 @@ retax.bootstrap(rootElement);
 
 That's all!
 
-## What retax realy does?
+## What retax really does?
 ### It centralizes all the stuff that is not needed by the developper
 How many times react / redux developpers should edit the app configuration files (like `createReduxStore.js`, `clientEntry.js`, `serverRenderingMiddleware.js`, etc...)?
 Only once. But in practice. this is not really like that...
