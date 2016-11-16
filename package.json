@@ -52,7 +52,7 @@
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
     "immutable": "^3.8.0",
-    "react": "^0.14.0 || ^15.0.0-0",
+    "react": "^15.4.0",
     "react-dom": "^0.14.0 || ^15.0.0-0",
     "react-helmet": "^3.0.1",
     "react-redux": "^4.4.5",
